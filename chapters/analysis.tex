@@ -1,75 +1,53 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Analytická časť}
+\chapter{Analýza}
 
-Analytická časť záverečnej práce analyzuje existujúce podobné prístupy k~riešeniu stanoveného problému. Autor práce musí uviesť v~tejto časti existujúce prístupy a riešenia, pričom musí zaujať stanovisko k~týmto prístupom a riešeniam a opísať ich výhody a nedostatky. Prevažne v~tejto časti autor používa odkazy na použité zdroje. Autor v~analýze nepreberá odseky z~cudzích prác ale uvádza prevažne vlastné postoje podložené odkazmi na literatúru. Analytická časť práce by teda nemala byť len povrchným prepisom základných informácií z~Wikipédie alebo zo stránok opisovaných nástrojov. Je potrebné aby bola analýza podporená aj experimentmi ak to umožňuje téma práce (napr. vyskúšam softvér). Vďaka popisu existujúcich riešení autor pochopí problematiku, viac sa nad riešeniami zamyslí, usporiada si ich, zistí ich kladné a záporné vlastnosti, z~čoho potom postupne vyplynie návrh vlastného riešenia v~syntetickej časti. Analytická časť tvorí zvyčajne ¼ jadra práce.
+\section{Analýza potenciálnych počítačových hier}
+Bližšie si pozrieme kandidátov hier na základe možností dát, produktivity, veľkosti ich publika a investovaných fondov do tipovania.
 
-Analytickú časť je možné rozdeliť na niekoľko kapitol, ktoré budú venované rôznym analyzovaným témam. Názvy kapitol majú zodpovedať tomu, čo je v~kapitole opisované. Napríklad ak v~práci analyzujete súčasný stav v~oblasti medzigalaktických letov, namiesto všeobecného názvu "`Analýza súčasného stavu"' by mal byť použiťý názov analyzovanej témy --- "`Medzigalaktické lety"'.
+\subsection{Counter-Strike: Global Offensive}
+Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná v roku 2012. Práve prebieha svetový šampionát vo Švédsku s výherným rozpočtom 2 miliónov dolárov. Veľkou časťou tejto hry je verejne dostupný trh s predmetmi získateľnými iba cez túto hru. Tieto predmety majú na podobnom základe ako NFT´s peňažnú hodnotu a poskytujú hráčom vsadiť cez tretie strany na výhercov konkrétnych zápasov, čo viacnásobne zväčšuje tipovací trh. Problémom pri FPS hrách je ale určenie potrebných dát na predpoveď. Výsledok má príliš veľa variácií, kde len milimetre rozhodujú o úplnej zmene priebehu. Dalo by sa určiť víťaza na základe predošlých stretnutí daných dvoch tímov, no tímy sú veľmi ovplyvnené zmenami hráčov, ktoré môžu úplne zmeniť tímovú atmosféru a dáta z predošlých hier sú nepotrebné.
+ \subsubsection{Predpovede počas zápasu}
+ Jedna hra sa delí na 30 kôl. Prvý tím ktorý dosiahne 16 bodov, vyhráva. Počas kola už firma Valve, tvorca tejto hry, ukázala ich prieskumy a ukazuje, aká je šanca, že daný tím vyhraje kolo na základe miliárd kôl z predchádzajúcich hier. Percentá sa menia podľa počtu živých hráčov, počtu peňazí, mapy, strany a položenia bomby. Za túto funkciu som musel zaplatiť 0,85 eur za mesiac.
+  \subsubsection{Predstavenie podobných prístupov}
+  Nasledujúce obrázky sú z pozorovania podobných prístupov.
+ \begin{figure}
+ 
+ 	\includegraphics[width=.9\textwidth]{figures/jednanula}
+ 	\centering
+ 	\caption{\LaTeX{} Na začiatku môžeme vidieť 51 percentnú pravdepodobnosť na výhru, pri prvom úmrtí nášho spoluhráča šanca klesla na 36 percent, pri druhom až na 20, ale pri zabití nepriateľa šanca stúpla na 30 percent.  \label{jednanula}}
+ \end{figure}
 
-% lorem ipsum
-\section{Lorem ipsum}
-\blindtext
-
-\section{Aliquam eu malesuada urna}
-\blindtext
-\begin{itemize}
-    \item v~knihe \cite{book} autor prezentuje naozaj odvážne myšlienky
-    \item nemenej zaujímavé výsledky publikuje ďalší autor v~článku \cite{article} 
-    \item v~konferenčnom príspevku \cite{conference} sú uvedené tiež zaujímavé veci
-    \item \LaTeX{}\footnote{\url{https://www.latex-project.org/}} je typografický jazyk
-\end{itemize}
-
-Given a set of numbers, there are elementary methods to compute its \acrlong{gcd}, which is abbreviated \acrshort{gcd}. This process is similar to that used for the \acrfull{lcm}.
-
-\subsection{Donec vehicula consequat}
-\blindtext
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=.9\textwidth]{figures/tugboat}
-    \caption{\LaTeX{} Friendly Zone \label{o:latex_friendly_zone}}
+  \begin{figure}
+\includegraphics[width=.9\textwidth]{figures/sedemnula}
+\centering
+\caption{\LaTeX{} Vieme vydedukovať, že čím je šanca na výhru vyššia, tým sa šanca na úmrtie spoluhráča takisto zmenšuje. 
+\label{sedemnula}}
+\end{figure}
+\begin{figure}
+	\includegraphics[width=.9\textwidth]{figures/sedemstyri}
+	\centering
+	\caption{\LaTeX{} Hneď prvé percentu je veľmi nízke, len 24 percent, a to kvôli horšiemu vybaveniu/peňažnej situácie nášho tímu.
+		\label{sedemstyri}}
+\end{figure}
+\begin{figure}
+	\includegraphics[width=.9\textwidth]{figures/osempat}
+	\centering
+	\caption{\LaTeX{} Z prvého prechodu si môžete všimnúť stúpnutie šance z 34 na 48 percent, aj keď bol zabitý jeden z našich spoluhráčov. 
+		\label{osempat}}
 \end{figure}
 
-\subsection{Nullam in mauris consectetur}
-\blindtext
+ \subsubsection{Vyhodnotenie Counter-Strike: Global Offensive}
+ Vyhrávajúci tím a zmeny je možné vidieť počas celého daného kola, ale stávky sa berú pred začatím zápasu.
+ 
+Berúc do úvahy potenciál a veľkosť stávkového trhu nie je aktuálne reálne nájsť spôsob predpovedania, a to kvôli kvantám premenných.
 
-\begin{lstlisting}[language=C,caption={Program, ktorý pozdraví celý svet}]
-#include <stdio.h>
-int main() {
-    /* Print Hello, World! */
-    printf("Hello, World!\n");
-    return 0;
-}
-\end{lstlisting}
+\subsection{Dota 2}
+Dota je jednou z dvoch najznámejších MOBA hier na svete, s priemerným počtom hráčov viac ako 400 tisíc. Podobne ako Counter-Strike má predmety a verejný trh. Na druhej strane výherný rozpočet sa s ním nedá porovnať, pretože tento rok prekonal 40 miliónov. Umelá inteligencia tejto hre tiež nie je vzdialená. Počítačom sa podarilo nadľudsky zdokonaliť sa a v uzavretých podmienkach porazili aj najlepších ľudských hráčov na svete. Stávkovanie na ľudské tímy je ale iná vec. Dáta sú pri Dote celkom jasné a je možné ich čerpať z OpenDota API na stránke : https://docs.opendota.com/.
 
+\subsection{League of Legends}
+Liga Legiend je najrozšírenejšia MOBA hra na svete s viac ako 3 miliónmi každodenných používateľov a viac ako 100 miliónmi mesačných použivateľov. Riot games má podobne ako Dota verejne dostupné informácie pre developerov na stránke : https://developer.riotgames.com/ 
 
-\subsection{Vestibulum tristique elementum varius}
-\blindtext
-
-\begin{table}[!ht]
-	\caption{Country list}\label{t:1}
-	\smallskip
-	\centering
-
-	\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
-		\hline
-		\multicolumn{4}{|c|}{Country List} \\
-		\hline
-		Country Name or Area Name& ISO ALPHA 2 Code &ISO ALPHA 3 Code&ISO numeric Code\\
-		\hline
-		Afghanistan & AF & AFG & 004\\
-		Aland Islands & AX & ALA & 248\\
-		Albania & AL & ALB & 008\\
-		Algeria & DZ & DZA & 012\\
-		American Samoa & AS & ASM & 016\\
-		Andorra & AD & AND & 020\\
-		Angola & AO & AGO & 024\\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-\section{Phasellus id pretium neque}
-\blindtext
-
-\blindtext
+\section{Analýza dostupných spracovaní dát}
+\subsection{Supervised learning}
+\subsection{Reinforcement learning}
