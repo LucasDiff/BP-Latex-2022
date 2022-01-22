@@ -1,8 +1,140 @@
-% !TEX root = ../thesis.tex
+\chapter{Návrh používateľského rozhrania}
 
-\chapter{Záver}
 \label{summary}
 
-Záver práce obsahuje zhrnutie výsledkov práce s~jasným opisom prínosov a pôvodných (vlastných) výsledkov autora a vyhodnotenie splnenia stanovených cieľov. Je to stručné zhrnutie informácií uvedených v~záverečnej práci. Záver by nemal obsahovať nové informácie.
+Používateľské rozhranie bolo centrované okolo ideálneho používateľa pomocou viacerých iterácií. Dve hlavné iterácie boli vykonané používateľskými testami. Pri formálnom spôsobe sme použili interview a dotazník s otázkami ohľadne použiteľnosti a konzistencii. Primárne bol používaný prototypovací nástroj Figma pri všetkých prototypoch.
 
-V~závere by mal tiež autor poukázať na prípadné otvorené otázky, ktoré sú nad rámec rozsahu práce a mal by odporučiť ďalšie aktivity na pokračovanie pri riešení problému. Rozsah záveru je minimálne 1 celá strana.
+
+
+\section*{Konceptuálny model}
+
+
+
+\begin{figure}[h!]
+	
+	\includegraphics[width=.9\textwidth]{figures/scenar}
+	
+	\centering
+	
+	\caption{\LaTeX{} Na začiatku sú informácie o používateľovi, technické zručnosti a Bio. Následne vidíme scenár primárnej úlohy modelu. \label{scenar}}
+	
+\end{figure}
+
+
+
+Používateľské rozhranie bolo vytvárané postupne s pomocou cvičení z predmetu UX. Vybranie správneho smeru bolo zložité, nakoľko bolo viacero časti bakalárskej práce, ktoré bolo možné implementovať do používateľského prostredia. Ako prvú časť bolo potrebné vybrať personu, ktorá má predstavovať ideálneho zákazníka/používateľa a to bol majiteľ esportového tímu. Následne sme jej vytvorili scenár, ktorý bol potrebný na vytvorenie prvého prototypu. 
+
+
+
+\section*{Návrh postupností obrazoviek}
+
+Návrh postupností obrazoviek máme rozdelený na 5 častí :
+
+
+
+\begin{figure}[h!]
+	
+	\includegraphics[width=.9\textwidth]{figures/postupnost}
+	
+	\centering
+	
+	\caption{\LaTeX{} Postupnosť obrazoviek \label{jednanula}}
+	
+\end{figure}
+
+
+
+\subsubsection{Prihlasovanie}
+
+Na prvej obrazovke sa nachádza prihlasovanie do účtu s možnosťou zabudnutého hesla.
+
+\subsubsection{Prázdna obrazovka}
+
+Následné je presunutie na prázdnu obrazovku, kde je potrebné vyplniť miesta na vypočítanie pravdepodobnosti daného tímu na výhru.
+
+\subsubsection{Vyplnená obrazovka}
+
+Potrebujeme vyplniť všetky prázdne políčka šampiónmi z hry League of Legends.
+
+\subsubsection{Výsledková obrazovka}
+
+Po vyplnení môžeme stlačiť tlačidlo vypočítať, ktoré v praxi zoberie zadané tímy a pošle ich umelej inteligencii, ktorá vypočíta percentuálnu výhru obidvoch tímov. Výsledky z tohto pokusu môžeme uložiť.
+
+\subsubsection{História}
+
+To nás automaticky prenesie na ďalšiu obrazovku histórie. V histórii si môžeme prezrieť predošlé vykonané pokusy a ich podrobnosti. Z histórie možeme následne rovno prejsť na nový prípad.
+
+
+
+
+
+\section*{Prvý prototyp}
+
+odkaz na bežiaci prototyp :
+\cite{figma}
+\\
+odkaz na video z youtube :
+\cite{youtube}
+\\ \\
+Pri prvom prototype sme použili všetky informácie, ktoré sme objasnili pri prvých bodoch ako scenár. Hlavná bola použiteľnosť a jednoduchosť použitia softvéru na predikciu. Kolorizácia je okolo fialovej farby typ monochromatic. Používateľské testy boli až po vytvorení prvého prototypu. V nasledujúcich obrázkoch sú niektoré zo zmien po prvom testovaní.
+\\ \\
+
+
+
+\begin{figure}[h!]
+	
+	\includegraphics[width=.9\textwidth]{figures/predtym}
+	
+	\centering
+	
+	\caption{\LaTeX{} Zmena mätúceho tlačidla prihlásenie\label{predtym}}
+	
+\end{figure}
+
+
+
+
+
+\begin{figure}[h!]
+	
+	\includegraphics[width=.9\textwidth]{figures/2}
+	
+	\centering
+	
+	\caption{\LaTeX{}Zmena mätúceho tlačidla na výber šampiónov\label{2}}
+	
+\end{figure}
+
+
+
+\begin{figure}[h!]
+	
+	\includegraphics[width=.9\textwidth]{figures/3}
+	
+	\centering
+	
+	\caption{\LaTeX{} Pridanie popisu História na objasnenie \label{3}}
+	
+\end{figure}
+
+
+
+\begin{figure}[h!]
+	
+	\includegraphics[width=.9\textwidth]{figures/4}
+	
+	\centering
+	
+	\caption{\LaTeX{} Pridanie sociálnych sietí \label{4}}
+	
+\end{figure}
+
+
+
+
+
+\section*{Overenie prvého prototypu}
+
+
+
+Účastníci hlavného testu boli 4 hráči, ktorí majú nahraté aj hry spomínané v tejto bakalárskej práci. Sú to 3 študenti, z toho 2 vysokoškoláci a 1 maturant a jeden pracujúci. Výsledky SUS dotazníka spomedzi účastníkov boli priemerne 95/100, čo je asi dôsledkom malého počtu účastníkov a zároveň aj vysokej jednoduchosti použitia. Aj keď výsledky SUS boli povzbudzujúce a utvrdili teóriu jednoduchosti používania, nevyšli z nich žiadne praktické výsledky. Na konkrétne podstatné zmeny bolo určené interview a zároveň pozorovanie účastníkov pri vykonávaní scenárov. Bolo potrebné urobiť viacero štylistických zmien na zlepšenie viditeľnosti niektorých popisov, ktoré pripomínali tlačidlá, takisto niektoré prechody a celkovú čitateľnosť. Vykonávanie scenárov a prvé dojmy účastníkov sú zaznamenané a uložené.
