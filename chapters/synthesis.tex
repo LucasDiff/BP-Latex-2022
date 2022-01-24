@@ -2,7 +2,32 @@
 
 \chapter{Syntetická časť}
 \label{methodology}
+V tejto časti si prejdeme konceptuálny návrh riešenia a bližšie sa pozrieme na metódy a hodnoty, ktoré budú potrebné pri jednotlivých fázach z návrhu riešenia, a na finálnu tvorbu prototypu 
+\section{Konceptuálny návrh riešenia}
 
-Syntetická časť opisuje metódy použité na syntézu riešenia a opisuje syntézu samotného riešenia (zvyčajne je to návrh/implementácia softvérového resp. hardvérového riešenia), pričom sa opiera o~závery analytickej časti práce. Začína od toho, ako sa bude riešenie používať: najdôležitejšie scenáre používania a používateľské rozhranie, ktoré bude tieto scenáre efektívne podporovať. Až potom je na rade vnútorná architektúra alebo použité technológie. Syntetická časť tvorí zvyčajne ½ jadra práce.
+ \begin{figure}[h!]
+	
+	\includegraphics[width=.9\textwidth]{figures/navrhriesenia}
+	\centering
+	\caption{  \label{dota2}}
+	
+\end{figure}
 
-Syntetickú časť práce vhodne rozdeľte do kapitol a pomenujte ich podľa toho, čomu sú venované.
+Pri návrhu riešenia treba spracovať 4 fázy : 
+
+\begin{enumerate}
+	\item Prevziať potrebné dáta z hier cez API
+	\item Spracovať ich do čitateľnej verzie pre umelú inteligenciu
+	\item Použiť dáta na natrénovanie modelu
+	\item Spracovať výsledky do čitateľnej formy pre zákazníkov
+\end{enumerate}
+
+
+\section{Opis metód}
+Hlavné metódy pri učení nášho modelu.
+\subsection{Supervised learning}
+Podkategória umelej inteligencie, ktorá používa daný dataset na natrénovanie modelu.
+
+\subsection{Reinforcement learning}
+Časť umelej inteligencie, pri ktorej sa sledujú kroky inteligentných agentov na maximalizáciu efektívnosti dosiahnutia cieľa.
+
