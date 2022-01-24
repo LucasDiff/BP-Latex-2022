@@ -8,61 +8,38 @@ Analýza sa bude zaoberať dátami využiteľnými pri implementácii umelej int
 Bližšie si pozrieme kandidátov hier na základe možností dát, produktivity, veľkosti ich publika a investovaných fondov do tipovania.
 
 \subsection{Counter-Strike: Global Offensive}
-Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná v roku 2012.\cite{csgoplayers} Práve prebieha svetový šampionát vo Švédsku s výherným rozpočtom 2 miliónov dolárov. Veľkou časťou tejto hry je verejne dostupný trh s predmetmi získateľnými iba cez túto hru. Tieto predmety majú na podobnom základe ako NFT´s peňažnú hodnotu a poskytujú hráčom vsadiť cez tretie strany na výhercov konkrétnych zápasov, čo viacnásobne zväčšuje tipovací trh. Problémom pri FPS hrách je ale určenie potrebných dát na predpoveď. Výsledok má príliš veľa variácií, kde len milimetre rozhodujú o úplnej zmene priebehu. Dalo by sa určiť víťaza na základe predošlých stretnutí daných dvoch tímov, no tímy sú veľmi ovplyvnené zmenami hráčov, ktoré môžu úplne zmeniť tímovú atmosféru a dáta z predošlých hier sú irelevantné.
+Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná v roku 2012.\cite{csgoplayers} V roku 2021 prebiehal svetový šampionát vo Švédsku s výherným rozpočtom 2 miliónov dolárov. Veľkou časťou tejto hry je verejne dostupný trh s predmetmi získateľnými iba cez túto hru. Tieto predmety majú na podobnom základe ako NFT´s peňažnú hodnotu a poskytujú hráčom vsadiť cez tretie strany na výhercov konkrétnych zápasov, čo viacnásobne zväčšuje tipovací trh. Problémom pri FPS hrách je ale určenie potrebných dát na predpoveď. Výsledok má príliš veľa variácií, kde len milimetre rozhodujú o úplnej zmene priebehu. Dalo by sa určiť víťaza na základe predošlých stretnutí daných dvoch tímov, no tímy sú veľmi ovplyvnené zmenami hráčov, ktoré môžu úplne zmeniť tímovú atmosféru a dáta z predošlých hier sú irelevantné.
 
  \subsubsection{Predpovede počas zápasu}
- Jedna hra sa delí na 30 kôl. Prvý tím, ktorý dosiahne 16 bodov, vyhráva. Počas kola už firma Valve, tvorca tejto hry, ukázala ich prieskumy a ukazuje, aká je šanca, že daný tím vyhraje kolo na základe miliárd kôl z predchádzajúcich hier. Percentá sa menia podľa počtu živých hráčov, počtu peňazí, mapy, strany a položenia bomby. Za túto funkciu som musel zaplatiť 0,85 eur za mesiac.
-
-
+ Jedna hra sa delí na 30 kôl. Prvý tím, ktorý dosiahne 16 bodov, vyhráva. Počas kola už firma Valve, tvorca tejto hry, ukázala ich prieskumy a ukazuje, aká je šanca, že daný tím vyhraje kolo na základe miliárd kôl z predchádzajúcich hier. Percentá sa menia podľa počtu živých hráčov, počtu peňazí, mapy, strany a položenia bomby. Za túto funkciu bolo potrebné zaplatiť 0,85 eur za mesiac.
+ \subsubsection{Dostupné príslušenstvo od Valve}
+Na obrázku 1.1 si pri začiatku môžeme všimnúť 51 percentnú pravdepodobnosť na výhru, ktorá je vypočítaná podľa vybavenia tímov/peňažnej situácie a podľa toho, či sme teroristi alebo policajti. Napríklad ak majú policajti o 10 tisíc peňazí navyše, tak majú šancu na výhru 60 percent, ale ak majú o 10 tisíc viac teroristi, šanca na výhru je 63 percent. Pri prvom úmrtí nášho spoluhráča šanca klesla na 36 percent, pri druhom až na 20, ale pri zabití nepriateľa šanca stúpla na 30 percent. Vieme vydedukovať, že čím je šanca na výhru vyššia, tým sa šanca na úmrtie spoluhráča takisto zmenšuje. Môže nastať situácia, kde po úmrtí nášho spoluhráča sa šanca zdvihne a to kvôli presadenému poškodeniu našich spoluhráčov.
   
  \begin{figure}[h!]
  
  	\includegraphics[width=.9\textwidth]{figures/jednanula}
  	\centering
- 	\caption{\LaTeX{} Na začiatku môžeme vidieť 51 percentnú pravdepodobnosť na výhru, pri prvom úmrtí nášho spoluhráča šanca klesla na 36 percent, pri druhom až na 20, ale pri zabití nepriateľa šanca stúpla na 30 percent.  \label{jednanula}}
+ 	\caption{ \label{jednanula}}
  \end{figure}
 
-  \begin{figure}[h!]
-  	
-\includegraphics[width=.9\textwidth]{figures/sedemnula}
-\centering
-\caption{\LaTeX{} Vieme vydedukovať, že čím je šanca na výhru vyššia, tým sa šanca na úmrtie spoluhráča takisto zmenšuje. 
-\label{sedemnula}}
-\end{figure}
-
-\begin{figure}[h!]
-	\includegraphics[width=.9\textwidth]{figures/sedemstyri}
-	\centering
-	\caption{\LaTeX{} Hneď prvé percento je veľmi nízke, len 24 percent, a to kvôli horšiemu vybaveniu/peňažnej situácie nášho tímu.
-		\label{sedemstyri}}
-\end{figure}
-
-\begin{figure}[h!]
-	\includegraphics[width=.9\textwidth]{figures/osempat}
-	\centering
-	\caption{\LaTeX{} Z prvého prechodu si môžete všimnúť stúpnutie šance z 34 na 48 percent, aj keď bol zabitý jeden z našich spoluhráčov. 
-		\label{osempat}}
-\end{figure}
+ 
 
 \subsubsection{Potrebné dáta hry Counter-Strike: Global Offensive :}
 
+ \begin{itemize}
+ 	\item PlayerId - unikátne ID hráča
+ 	\item TeamId - unikátne ID tímu hráča
+ 	\item OpponentId - ID opozičného tímu
+ 	\item Round - počet hraných kôl
+ 	\item MapID - ID mapy
+ 	\item Kills - počet zabití
+ 	\item Assists - počet asistencií
+ 	\item Deaths - počet smrtí
+ 	\item Headshots - počet zabití streľbou do hlavy
+ 	\item EntryKills - počet prvých zabití v kole počas hry
+ 	\item Winner - víťaz
+\end{itemize}
  
- PlayerId - unikátne ID hráča \\
- Name - meno hráča \\
- TeamId - unikátne meno tímu hráča \\
- Team - meno tímu hráča \\
- Opponent - meno opozičného tímu \\
- DateTime - čas zápasu \\
- OpponentId - ID opozičného tímu \\
- Games - počet hraných hier\\
- Maps - počet hraných máp\\
- Kills - počet zabití\\
- Assists - počet asistencií\\
- Deaths - počet smrtí\\
- Headshots - počet zabití streľbou do hlavy\\
- AverageDamagePerRound - priemerné poškodenie za kolo\\
- EntryKills - počet hráč mal prvé zabitie v kole\\
- Winner - víťaz
 
  
 
@@ -78,12 +55,12 @@ Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná 
 
 
 \subsection{Dota 2}
-Dota je jednou z dvoch najznámejších MOBA hier na svete, s priemerným počtom hráčov viac ako 400 tisíc. \cite{dotaplayers} Podobne ako Counter-Strike má predmety a verejný trh. Na druhej strane výherný rozpočet sa s ním nedá porovnať, pretože tento rok prekonal 40 miliónov. \cite{dotaprizepool}
+Dota je jednou z dvoch najznámejších MOBA hier na svete, s priemerným počtom hráčov viac ako 400 tisíc. \cite{dotaplayers} Podobne ako Counter-Strike má predmety a verejný trh. Na druhej strane výherný rozpočet sa s ním nedá porovnať, pretože v roku 2021 prekonal 40 miliónov, čo je jeden z najväčších zo všetkých hier na svete. \cite{dotaprizepool}
 \\ \\
  \begin{figure}[h!]
 	\includegraphics[width=.9\textwidth]{figures/dota1}
 	\centering
-	\caption{\LaTeX{} Na obrázku si vyberáme šampiónov pre oba tímy a následne nám vybehnú zápasy, ktoré prebehli s týmito podmienkami. \label{dota1}}
+	\caption{ Na obrázku si vyberáme šampiónov pre oba tímy a následne nám vybehnú zápasy, ktoré prebehli s týmito podmienkami. \label{dota1}}
 	
 \end{figure}
 
@@ -92,32 +69,33 @@ Dota je jednou z dvoch najznámejších MOBA hier na svete, s priemerným počto
 	
 	\includegraphics[width=.9\textwidth]{figures/dota2}
 	\centering
-	\caption{\LaTeX{} Po rozkliknutí zápasu si v zázname vieme pozrieť výhercu a všetky informácie sprevádzajúce daný zápas. \label{dota2}}
+	\caption{ Po rozkliknutí zápasu si v zázname vieme pozrieť výhercu a všetky informácie sprevádzajúce daný zápas. \label{dota2}}
 	
 \end{figure}
 
 \subsubsection{Dáta hry Dota 2}
 
-match\_id - unikátne ID zápasu \\
-duration - dĺžka zápasu \\
-start\_time - začiatok zápasu \\
-radiant\_team\_id - ID radiant tímu \\
-radiant\_name - meno radiant tímu \\
-dire\_team\_id - ID dire tímu \\
-dire\_name - meno dire tímu \\
-leagueid - ID ligy\\
-league\_name - meno ligy\\
-series\_id - ID série\\
-series\_type - typ série\\
-radiant\_score - skóre radiant\\
-dire\_score - skóre direy\\
-radiant\_win - výherca\\
-name - meno hráča\\
-radiant\_picks - radiant vybraní šampióni\\
-radiant\_bans - radiant zabanovaní šampióni\\
-dire\_picks - dire vybraní šampióni\\
-dire\_bans - dire zabanovaní šampióni
-
+ \begin{itemize}
+\item match\_id - unikátne ID zápasu 
+\item duration - dĺžka zápasu 
+\item start\_time - začiatok zápasu 
+\item radiant\_team\_id - ID radiant tímu 
+\item radiant\_name - meno radiant tímu 
+\item dire\_team\_id - ID dire tímu 
+\item dire\_name - meno dire tímu 
+\item leagueid - ID ligy
+\item league\_name - meno ligy
+\item series\_id - ID série
+\item series\_type - typ série
+\item radiant\_score - skóre radiant
+\item dire\_score - skóre direy
+\item radiant\_win - výherca
+\item name - meno hráča
+\item radiant\_picks - radiant vybraní šampióni
+\item radiant\_bans - radiant zabanovaní šampióni
+\item dire\_picks - dire vybraní šampióni
+\item dire\_bans - dire zabanovaní šampióni
+\end{itemize}
 
 \subsubsection{Vyhodnotenie hry Dota 2}
 Znovu sa pozrieme na 3 oblasti. \\ \\ 
@@ -127,20 +105,20 @@ Dáta pri Dote môžeme rozdeliť na dve kategórie :
 \\ \\
 1. Dáta na predpoveď pred vybratím šampiónov : \\
 Tieto dáta sú obmedzené z dôvodu, že nevieme akých šampiónov budú dané dva tímy hrať. Takže sa spoliehame na predošlé výsledky daných dvoch tímov a ich stretnutí navzájom alebo s podobnými tímami. Takisto, ak sú noví hráči v tíme, vieme sa pozrieť aj na dáta individuálnych hráčov a na ich stretnutia z predošlých tímov. \\
-Ďalšia podmienka, ktorou by sa dala predikcia vylepšiť, vychádza z porovnaní dát hráčov v danom tíme a šampiónov, ktorí sú práve v turnaji alebo v Patchi najviac hraní. Napríklad práve v rotácii najhranejších Carry šampiónov na profesionálnej scéne je daných 10 a týchto 10 porovnáme s hráčom v Carry pozícii, koľko má za nich nahraných profesionálnych hier alebo na ich SoloQ účte a ich výhernosť/gold per minute/KDA s týmito šampiónmi.  
+Ďalšia podmienka, ktorou by sa dala predikcia vylepšiť, vychádza z porovnaní dát hráčov v danom tíme a šampiónov, ktorí sú práve v turnaji alebo v Patchi najviac hraní. Napríklad práve v rotácii najhranejších Carry šampiónov na profesionálnej scéne je daných 10 a týchto 10 porovnáme s hráčom v Carry pozícii, koľko má za nich nahraných profesionálnych hier alebo na ich SoloQ účte a ich výhernosť/gold per minute/KDA(Kills, deaths, assists ratio) s týmito šampiónmi.  
 \\ \\
 2. Dáta na predpoveď po vybratí šampiónov : \\
 Týchto dát je kvantum, lebo vieme použiť dáta o šampiónoch nie len z profesionálnych hier, ale aj z hier normálnych hráčov z vyšších líg v pomere hodnotenia, inak povedaného hodnotiaceho rebríčka. Vedeli by sme použiť dáta aj z nižšie postavených hráčov Doty, ale to by s vysokou pravdepodobnosťou zhoršilo výsledok predikcie vzhľadom na fakt, že hra top 80 percent hráčov a hra top 0.003 percent hráčov sa nedá porovnať. Veľmi dôležité informácie by teda boli o výkonnosti šampiónov ako gold per minute/average KDA alebo winrate. Zároveň by bolo veľmi zaujímavé skombinovať kompatibilnosť šampiónov spolu, spojením dvoch alebo viacerých šampiónov a ich spoločný priemerný winrate.
 
 
 \subsection{League of Legends}
-Liga Legiend je najrozšírenejšia MOBA hra na svete s viac ako 3 miliónmi každodenných používateľov a viac ako 100 miliónmi mesačných používateľov primárne z Číny. \cite{leaguefeed} 
+League of Legends(Liga Legiend) je najrozšírenejšia MOBA hra na svete s viac ako 3 miliónmi každodenných používateľov a viac ako 100 miliónmi mesačných používateľov primárne z Číny. \cite{leaguefeed} 
 
  \begin{figure}[h!]
 	
 	\includegraphics[width=.9\textwidth]{figures/leaguegraph}
 	\centering
-	\caption{\LaTeX{}   \label{leaguegraph}}
+	\caption{   \label{leaguegraph}}
 	
 \end{figure}
 
@@ -155,18 +133,18 @@ a informácie o profesionálnych zápasoch na :
 https://lol.fandom.com/wiki/League\_Championship\_Series
 
 \subsubsection{Dáta hry League of Legends}
-
-date - dátum zápasu \\
-blueteam - meno modrého tímu \\
-redteam - meno červeného tímu \\
-winner - víťaz \\
-bluebans - bany modrého tímu \\
-redbans - bany červeného tímu \\
-bluepicks - vybraní šampióni modrého tímu \\
-redpicks - vybraní šampióni červeného tímu \\
-blueroster - hráči modrého tímu \\
-redroster - hráči červeného tímu 
-
+\begin{itemize}
+\item date - dátum zápasu 
+\item blueteam - meno modrého tímu 
+\item redteam - meno červeného tímu 
+\item winner - víťaz 
+\item bluebans - bany modrého tímu 
+\item redbans - bany červeného tímu 
+\item bluepicks - vybraní šampióni modrého tímu 
+\item redpicks - vybraní šampióni červeného tímu 
+\item blueroster - hráči modrého tímu 
+\item redroster - hráči červeného tímu 
+\end{itemize}
 \subsubsection{Vyhodnotenie hry League of Legends}
 
 Publikum z našich 3 hier ma LOL definitívne najväčšie, a to hlavne z dôvodu masívnej popularity v Číne, kde League of Legends má väčšiu popularitu a prestíž ako hocijaké iné, či už športy, hudba, tanec alebo spev. \cite{chinalol} 
