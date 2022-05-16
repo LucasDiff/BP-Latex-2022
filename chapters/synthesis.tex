@@ -2,7 +2,7 @@
 
 \chapter{Syntetická časť}
 \label{methodology}
-V tejto časti si prejdeme konceptuálny návrh riešenia na predikciu víťazného tímu v profesionálnych esport zápasoch a bližšie sa pozrieme na metódy a hodnoty, ktoré budú potrebné pri jednotlivých fázach z návrhu riešenia, a na finálnu tvorbu prototypu. 
+V tejto časti si prejdeme konceptuálny návrh riešenia na predikciu víťazného tímu v profesionálnych esport zápasoch v hre League of Legends a bližšie sa pozrieme na metódy a hodnoty, ktoré budú potrebné pri jednotlivých fázach z návrhu riešenia, a na finálnu tvorbu prototypu. 
 \section{Konceptuálny návrh riešenia}
 
  \begin{figure}[ht!]
@@ -45,32 +45,31 @@ V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do kt
 	\item JUNGLE - pozícia, ktorá sa voľne pohybuje po celej mape, zabíja jeho campy(6 rozdelených miest, kde zabíja monštrá za peniaze a obnovia sa dookola za 2 a pol až 5 minút)  a aplikuje "ganky" (kalkulované útoky na časť mapy)
 	\begin{itemize}
 		\item clearer - jungler(šampión v jungli), ktorý si zakladá na ich rýchlosti zabíjaní campov
-		\item ganker - jungler, ktorého hlavnou úlohou je čo najrýchlejšie pripraviť a vykonať, čo navyšší počet gankov
-		\item early - jungler, ktorý je najsilnejší v prvýh častiach hry
-		\item late - jugnler, ktorý sa snaží nezomierať a pretrpieť do neskorších fáz hry, v ktorých je najsilnejší
+		\item ganker - jungler, ktorého hlavnou úlohou je čo najrýchlejšie pripraviť a vykonať, čo najvyšší počet gankov
+		\item early - jungler, ktorý je najsilnejší v prvých častiach hry
+		\item late - jungler, ktorý sa snaží nezomierať a pretrpieť do neskorších fáz hry, v ktorých je najsilnejší
 		\item teamfightdamage - jungler, ktorý si v neskorších fázach hry zakladá na výške poškodenia počas tímového boja
-		\item teamfightcc - jungler, ktorý si v neskorších fázach hry zakladá na možnosti znehybhniť jedného alebo viacerých nepriateľských šampiónov
+		\item teamfightcc - jungler, ktorý si v neskorších fázach hry zakladá na možnosti znehybniť jedného alebo viacerých nepriateľských šampiónov
 	\end{itemize}
 	\item MID - centrovaná pozícia, blízko ku TOPu a aj BOTu. Význám sa odvíja od plánu ostatných spoluhráčov
 	\begin{itemize}
-		\item laner - šampión, ktorý si zakladá na ich sile v prvých štádiách hry
-		\item splitpusher - šampión, ktorý je rád izolovaný a rýchlo ničí veže
-		\item teamfightdamage - šampión, ktorý exceluje v neskorších fázach hry a jeho primárnou priotiou je urobiť čo najväčšie poškodenie nepriateľským šampiónom
-		\item Round - teamfightcc - skratka cc znamená crowd control, myslené ako udržanie nepriateľského šampióna v nehybnom stave, zatiaľ čo ho spoluhráči zabijú
+		\item scaler - šampión, ktorý sa snaží udržať hru v rovnovážnom stave, lebo čím je dlhšia hra tým je silnejší
+		\item roamer - šampión, ktorý sa rád pohybuje po mape a pomáha ostatným spoluhráčom
+		\item teamfightdamage 
+		\item teamfightcc 
 	\end{itemize}
-	\item Spracovať výsledky do čitateľnej formy pre zákazníkov
+	\item BOT - duálna pozícia s pozíciou SUP na spodku mapy. Priorita je poskytnutie poškodenia z bezpečnej vzdialenosti
 	\begin{itemize}
-		\item laner - šampión, ktorý si zakladá na ich sile v prvých štádiách hry
-		\item splitpusher - šampión, ktorý je rád izolovaný a rýchlo ničí veže
-		\item teamfightdamage - šampión, ktorý exceluje v neskorších fázach hry a jeho primárnou priotiou je urobiť čo najväčšie poškodenie nepriateľským šampiónom
-		\item Round - teamfightcc - skratka cc znamená crowd control, myslené ako udržanie nepriateľského šampióna v nehybnom stave, zatiaľ čo ho spoluhráči zabijú
+		\item poker - adc(šampión v pozícii BOT), ktoré sa nerád zapája do intenzívneho súboja, ale z veľkej diaľky ostreluje nepriateľov
+		\item fighter - adc, ktorý rado dostane do blízkosti jedného alebo viacerých nepriateľov a snaží sa urobiť čo najväčšie poškodenie aj keby malo zomrieť 
+		\item utility - adc, ktorého prioritou nie je vysoké poškodenie, ale poskytovanie obnovy života alebo štítov spoluhráčom a zároveň spomľovanie alebo odhalenie nepriateľov
+		\item fronttoback - adc, ktoré je najlepšie v situáciach, kde nepriateľský tím bojuje s jeho tímom a ono sa rýchlo pohybuje dnu a von z boja
 	\end{itemize}
-\item Spracovať výsledky do čitateľnej formy pre zákazníkov
+\item SUP - pomocná pozícia, ktorá slúži na zosilnenie a ochranu spoluhráčov
 \begin{itemize}
-	\item laner - šampión, ktorý si zakladá na ich sile v prvých štádiách hry
-	\item splitpusher - šampión, ktorý je rád izolovaný a rýchlo ničí veže
-	\item teamfightdamage - šampión, ktorý exceluje v neskorších fázach hry a jeho primárnou priotiou je urobiť čo najväčšie poškodenie nepriateľským šampiónom
-	\item Round - teamfightcc - skratka cc znamená crowd control, myslené ako udržanie nepriateľského šampióna v nehybnom stave, zatiaľ čo ho spoluhráči zabijú
+	\item engage - support(šampión v pozícii SUP), ktorého prioritou je odchytiť nepriateľského šampióna a tým nepriamo začať tímovy súboj
+	\item peel - support, ktorého priorita je ochrániť spoluhráčov tým, že znehybnia nepriateľov, aby spoluhráči mohli bezpečne dávať poškodenia nepriateľskému tímu
+	\item enchanter - support, ktorý poskytuje spoluhráčom uzdravenia a štíty, poprípade znovuzrodenie
 \end{itemize}
 \end{enumerate}
 \section{Opis metód}
