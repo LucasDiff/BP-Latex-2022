@@ -29,11 +29,11 @@ V databázach bolo nie len veľké množstvo druhov dát, ale aj spôsobov akým
 Používané dáta budú 4 druhov. Meno šampióna, pozícia v hre, počet hier, miera výhry. Tieto dáta budú v 2 inštanciach relácií a to v relácií pozorovaný šampión vo vzťahu s jeho tímom a druhej vo vzťahu s nepriateľským tímom.
 
 \subsection{Úprava dát}
-Kedže databázy nie sú predpripravené na instantné využitie pri umelej inteligencii, tak sme dáta museli prispôsobiť do podoby, ktoré python, konkrétne scikit learn vie načítať. Dát je príliš veľa na ručnú úpravu, preto sme napísali krátky kód v jave, ktorý načíta databázy, každé slovo dá do uvozdoviek, dá medzi ne čiarku a odstráni všetky tabulátory a medzery.
+Kedže databázy nie sú predpripravené na instantné využitie pri umelej inteligencii, tak sme dáta museli prispôsobiť do podoby, ktoré python, konkrétne scikit learn vie načítať. Dát je príliš veľa na ručnú úpravu, preto sme napísali kód v jave, ktorý načíta databázy, každé slovo dá do uvozdoviek, dá medzi ne čiarku a odstráni všetky tabulátory a medzery.
 
 \subsection{Tokenizácia dát}
 Vzhľadom na veľké množstvo rôznych šampiónov, sme sa rozhodli ich rozdeliť na určité kategórie podľa ich významu v hre a ich pozícii v tíme.
-V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do ktorých patria šampióni. Tu sú kategória aj s krátkymi popismi :
+V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do ktorých patria šampióni. Tu sú kategórie aj s krátkymi popismi :
 \begin{enumerate}
 	\item TOP - pozícia na vrchu mapy, väčšinou izolovaná, až do neskorších fáz hry
 	 \begin{itemize}
@@ -46,7 +46,7 @@ V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do kt
 	\begin{itemize}
 		\item clearer - jungler(šampión v jungli), ktorý si zakladá na ich rýchlosti zabíjaní campov
 		\item ganker - jungler, ktorého hlavnou úlohou je čo najrýchlejšie pripraviť a vykonať, čo najvyšší počet gankov
-		\item early - jungler, ktorý je najsilnejší v prvých častiach hry
+		\item assasin - jungler, ktorý čaká na situácie, kde sú nepriateľský šampióni osamote a snažia sa ich zabiť
 		\item late - jungler, ktorý sa snaží nezomierať a pretrpieť do neskorších fáz hry, v ktorých je najsilnejší
 		\item teamfightdamage - jungler, ktorý si v neskorších fázach hry zakladá na výške poškodenia počas tímového boja
 		\item teamfightcc - jungler, ktorý si v neskorších fázach hry zakladá na možnosti znehybniť jedného alebo viacerých nepriateľských šampiónov
@@ -57,6 +57,7 @@ V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do kt
 		\item roamer - šampión, ktorý sa rád pohybuje po mape a pomáha ostatným spoluhráčom
 		\item teamfightdamage 
 		\item teamfightcc 
+		\item assasin
 	\end{itemize}
 	\item BOT - duálna pozícia s pozíciou SUP na spodku mapy. Priorita je poskytnutie poškodenia z bezpečnej vzdialenosti
 	\begin{itemize}
@@ -70,8 +71,13 @@ V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do kt
 	\item engage - support(šampión v pozícii SUP), ktorého prioritou je odchytiť nepriateľského šampióna a tým nepriamo začať tímovy súboj
 	\item peel - support, ktorého priorita je ochrániť spoluhráčov tým, že znehybnia nepriateľov, aby spoluhráči mohli bezpečne dávať poškodenia nepriateľskému tímu
 	\item enchanter - support, ktorý poskytuje spoluhráčom uzdravenia a štíty, poprípade znovuzrodenie
+	\item teamfightdamage
 \end{itemize}
 \end{enumerate}
+\subsection{Zápis tokenov}
+Na spracovanie a analýzu sme využili knižnicu Pandas v Pythone, ktorá poskytuje vysokú kvalitu pri manipalácii s dátami pomocou dátových štruktúr. Pomocou nami napísaného kódu, sa postupne všetky informácie o šampiónoch zapíšu do novo vytvoreného dataframu. V ňom sa uskutočnia viaceré zápisy a výpočty výhernosti daného šampióna vzhľadom na druh tokenov v jeho tíme, tieto výsledky sa zapíšu do finálneho dataframu pre každého šampióna.
+\subsection{Zhrnutie získaných dát}
+Vo finálnej podobe, máme spracovaných okolo 50 000 hier profesionálnych zápasov, vieme určiť výhernosť ľubovoľného šampióna, vzhľadom na typ tokenov v jeho aktuálnom tíme.
 \section{Opis metód}
 Hlavné metódy pri učení nášho modelu.
 \subsection{Supervised learning}
