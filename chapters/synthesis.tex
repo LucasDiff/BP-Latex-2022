@@ -29,7 +29,7 @@ V databázach bolo nie len veľké množstvo druhov dát, ale aj spôsobov akým
 Používané dáta budú 4 druhov. Meno šampióna, pozícia v hre, počet hier, miera výhry. Tieto dáta budú v 2 inštanciach relácií a to v relácií pozorovaný šampión vo vzťahu s jeho tímom a druhej vo vzťahu s nepriateľským tímom.
 
 \subsection{Úprava dát}
-Kedže databázy nie sú predpripravené na instantné využitie pri umelej inteligencii, tak sme dáta museli prispôsobiť do podoby, ktoré python, konkrétne scikit learn vie načítať. Dát je príliš veľa na ručnú úpravu, preto sme napísali kód v jave, ktorý načíta databázy, každé slovo dá do uvozdoviek, dá medzi ne čiarku a odstráni všetky tabulátory a medzery.
+Kedže databázy nie sú predpripravené na okamžité využitie pri umelej inteligencii, tak sme dáta museli prispôsobiť do podoby, ktoré python, konkrétne scikit learn vie načítať. Dát je príliš veľa na ručnú úpravu, preto sme napísali kód v jave, ktorý načíta databázy, každé slovo dá do uvozdoviek, dá medzi ne čiarku a odstráni všetky tabulátory a medzery.
 
 \subsection{Tokenizácia dát}
 Vzhľadom na veľké množstvo rôznych šampiónov, sme sa rozhodli ich rozdeliť na určité kategórie podľa ich významu v hre a ich pozícii v tíme.
@@ -42,7 +42,7 @@ V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do kt
 		\item teamfightdamage - šampión, ktorý exceluje v neskorších fázach hry a jeho primárnou priotiou je urobiť čo najväčšie poškodenie nepriateľským šampiónom počas tímového boja
 		\item teamfightcc - skratka cc znamená crowd control, myslené ako udržanie nepriateľského šampióna v nehybnom stave, zatiaľ čo ho spoluhráči zabijú
 	\end{itemize}
-	\item JUNGLE - pozícia, ktorá sa voľne pohybuje po celej mape, zabíja jeho campy(6 rozdelených miest, kde zabíja monštrá za peniaze a obnovia sa dookola za 2 a pol až 5 minút)  a aplikuje "ganky" (kalkulované útoky na časť mapy)
+	\item JUNGLE - pozícia, ktorá sa voľne pohybuje po celej mape, zabíja jeho tábory(6 rozdelených miest, kde zabíja monštrá za peniaze a obnovia sa dookola za 2 a pol až 5 minút)  a aplikuje "ganky" (kalkulované útoky na časť mapy)
 	\begin{itemize}
 		\item clearer - jungler(šampión v jungli), ktorý si zakladá na ich rýchlosti zabíjaní campov
 		\item ganker - jungler, ktorého hlavnou úlohou je čo najrýchlejšie pripraviť a vykonať, čo najvyšší počet gankov
@@ -59,7 +59,7 @@ V hre je 5 pozícií a pre káždú sme vybrali najčastejšie kategórie, do kt
 		\item teamfightcc 
 		\item assasin
 	\end{itemize}
-	\item BOT - duálna pozícia s pozíciou SUP na spodku mapy. Priorita je poskytnutie poškodenia z bezpečnej vzdialenosti
+	\item BOT - dvojaká pozícia s pozíciou SUP na spodku mapy. Priorita je poskytnutie poškodenia z bezpečnej vzdialenosti
 	\begin{itemize}
 		\item poker - adc(šampión v pozícii BOT), ktoré sa nerád zapája do intenzívneho súboja, ale z veľkej diaľky ostreluje nepriateľov
 		\item fighter - adc, ktorý rado dostane do blízkosti jedného alebo viacerých nepriateľov a snaží sa urobiť čo najväčšie poškodenie aj keby malo zomrieť 
