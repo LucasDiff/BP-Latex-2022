@@ -8,7 +8,8 @@ Analýza sa bude zaoberať dátami využiteľnými pri implementácii umelej int
 Bližšie si pozrieme kandidátov hier na základe možností dát, produktivity, veľkosti ich publika a investovaných fondov do tipovania.
 
 \subsection{Counter-Strike: Global Offensive}
-Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná v roku 2012.\cite{csgoplayers} V roku 2021 prebiehal svetový šampionát vo Švédsku s výherným rozpočtom 2 miliónov dolárov. Veľkou časťou tejto hry je verejne dostupný trh s predmetmi získateľnými iba cez túto hru. Tieto predmety majú na podobnom základe ako NFT´s peňažnú hodnotu a poskytujú hráčom vsadiť cez tretie strany na výhercov konkrétnych zápasov, čo viacnásobne zväčšuje tipovací trh. Problémom pri FPS hrách je ale určenie potrebných dát na predpoveď. Výsledok má príliš veľa variácií, kde len milimetre rozhodujú o úplnej zmene priebehu. Dalo by sa určiť víťaza na základe predošlých stretnutí daných dvoch tímov, no tímy sú veľmi ovplyvnené zmenami hráčov, ktoré môžu úplne zmeniť tímovú atmosféru a dáta z predošlých hier sú irelevantné.
+Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná v roku 2012.\cite{csgoplayers} V roku 2021 prebiehal svetový šampionát vo Švédsku s výherným rozpočtom 2 miliónov dolárov. Veľkou časťou tejto hry je verejne dostupný trh s predmetmi dostupnými iba cez túto hru. Tieto predmety majú na podobnom základe ako NFT\footnote {
+	NFT - non fungible token, digitálne potvrdenie vlastníctva predmetu/umenia/hudby/momentu na blockchain báze} peňažnú hodnotu a poskytujú hráčom vsadiť cez tretie strany na výhercov konkrétnych zápasov, čo viacnásobne zväčšuje tipovací trh. Problémom pri FPS hrách je ale určenie potrebných dát na predpoveď. Výsledok má príliš veľa variácií, kde len milimetre rozhodujú o úplnej zmene priebehu. Dalo by sa určiť víťaza na základe predošlých stretnutí daných dvoch tímov, no tímy sú veľmi ovplyvnené zmenami hráčov, ktoré môžu úplne zmeniť tímovú atmosféru a dáta z predošlých hier sú irelevantné.
 
  \subsubsection{Predpovede počas zápasu}
  Jedna hra sa delí na 30 kôl. Prvý tím, ktorý dosiahne 16 bodov, vyhráva. Počas kola už firma Valve, tvorca tejto hry, ukázala ich prieskumy a ukazuje, aká je šanca, že daný tím vyhraje kolo na základe miliárd kôl z predchádzajúcich hier. Percentá sa menia podľa počtu živých hráčov, počtu peňazí, mapy, strany a položenia bomby. Za túto funkciu bolo potrebné zaplatiť 0,85 eur za mesiac.
@@ -19,7 +20,7 @@ Na obrázku \ref{csgograf} si pri začiatku môžeme všimnúť 51 percentnú pr
  
  	\includegraphics[width=.9\textwidth]{figures/jednanula}
  	\centering
- 	\caption{CSGO graf \label{csgograf}}
+ 	\caption{Graf vyjadrujúci pravdepodobnosť víťazného tímu od firmy Valve \label{csgograf}}
 
  \end{figure}
 
@@ -46,21 +47,25 @@ Na obrázku \ref{csgograf} si pri začiatku môžeme všimnúť 51 percentnú pr
 
  \subsubsection{Vyhodnotenie Counter-Strike: Global Offensive}
  Pri vyhodnocovaní použiteľnosti hry sme sa pozerali na 3 oblasti. \\ \\ Potenciál/veľkosť publika a stávkovania. Efektívnosť využitia umelej inteligencie. Dostupnosť, respektíve využiteľnosť dát z hier. \\ \\
- Z hľadiska obecenstva, dostupnosti a možnosti stávkovania je CSGO veľmi lukratívna možnosť. Databáza hráčov je rozsiahla nielen v šírom počte, ale aj v rozmanitosti pôvodu hráčov, či už Európy, Ázie alebo Ameriky. Faktom je tiež, že ju spravuje firma Valve, ktorá má na starosti veľa iných hier a zároveň spracuváva jednu z najväčších online platforiem pre virtuálnu knižnicu hier. \\
+ Z hľadiska obecenstva, dostupnosti a možnosti stávkovania je CSGO veľmi lukratívna možnosť. Databáza hráčov je rozsiahla nielen v šírom počte, ale aj v rozmanitosti pôvodu hráčov, či už Európy, Ázie alebo Ameriky. Faktom je tiež, že ju spravuje firma Valve, ktorá má na starosti veľa iných hier a zároveň spracováva jednu z najväčších online platforiem pre virtuálnu knižnicu hier. \\
  Využiteľné dáta by sa skladali z predošlých stretnutí daných dvoch tímov, z aktuálnych informácií o jednotlivých hráčoch a ich štatistiky na vybraných mapách. Výhernosť tímu A proti tímu B a premostenie týchto informácií voči tímu C.\\
  Existuje ešte množstvo iných druhov dát, ktoré by zvýšili presnosť predikcie, ale sú to dáta, ktoré je možné zistiť už iba počas prebiehajúceho zápasu a vzhľadom na to, že stávky sa uzatvárajú pred začatím zápasu, sú tieto dáta nedostupné.
-  Existuje ešte množstvo iných druhov dát, ktoré by zvýšili presnosť predikcie, ale sú to dáta, ktoré je možné zistiť už iba počas prebiehajúceho zápasu a vzhľadom na to, že stávky sa uzatvárajú pred začatím zápasu, sú tieto dáta nedostupné.
+  Existuje ešte množstvo iných druhov dát, ktoré by zvýšili presnosť predikcie, ale sú to dáta, ktoré je možné zistiť už iba počas prebiehajúceho zápasu a vzhľadom na to, že väčšina stávok je pred začatím zápasu, tak sú tieto dáta nedostupné.
  \\ \\
- Potrebné dáta môžeme získať na stránke : \footnote {
+ Potrebné dáta môžeme získať na stránke sportsdata. \footnote {
  https://sportsdata.io/developers/data-dictionary/csgo
 }
 
 
 \subsection{Dota 2}
-Dota je jednou z dvoch najznámejších MOBA hier na svete, s priemerným počtom hráčov viac ako 400 tisíc. \cite{dotaplayers} Podobne ako Counter-Strike má predmety a verejný trh. Na druhej strane výherný rozpočet sa s ním nedá porovnať, pretože v roku 2021 prekonal 40 miliónov, čo je jeden z najväčších zo všetkých hier na svete. \cite{dotaprizepool}
+Dota je jednou z dvoch najznámejších MOBA \footnote {
+	MOBA - tip online hier s viacerými hráčmi, ktorí majú súboje v aréne
+} hier na svete, s priemerným počtom hráčov viac ako 400 tisíc. \cite{dotaplayers} Podobne ako Counter-Strike má predmety a verejný trh. Na druhej strane výherný rozpočet sa s ním nedá porovnať, pretože v roku 2021 prekonal 40 miliónov, čo je jeden z najväčších zo všetkých hier na svete. \cite{dotaprizepool}
 \\ \\
-Dota má nástroj na vyhľadávanie hier. Na obrázku \ref{dota1} si vieme vybrať šampiónov pre oba tímy a následne nám vybehnú zápasy, ktoré prebehli s týmito podmienkami.
-Po rozkliknutí zápasu si v zázname vieme pozrieť výhercu a všetky informácie sprevádzajúce daný zápas, ako môžeme vidieť na obrázku \ref{dota2}
+Dota má nástroj na vyhľadávanie hier. Na obrázku \ref{dota1} si vieme vybrať šampiónov \footnote {
+	šampión - postava, ktorú hráč reprezentuje v hre
+} pre oba tímy a následne nám vybehnú zápasy, ktoré prebehli s týmito podmienkami.
+
  \begin{figure}[h!]
 	\includegraphics[width=.9\textwidth]{figures/dota1}
 	\centering
@@ -68,6 +73,7 @@ Po rozkliknutí zápasu si v zázname vieme pozrieť výhercu a všetky informá
 	
 \end{figure}
 
+Po rozkliknutí zápasu si v zázname vieme pozrieť výhercu a všetky informácie sprevádzajúce daný zápas, ako môžeme vidieť na obrázku \ref{dota2}.
 
  \begin{figure}[h!]
 	
@@ -103,19 +109,18 @@ Po rozkliknutí zápasu si v zázname vieme pozrieť výhercu a všetky informá
 
 \subsubsection{Vyhodnotenie hry Dota 2}
 Znovu sa pozrieme na 3 oblasti. \\ \\ 
-Publikum Doti a dosah je v porovnaní s CSGO nižší, na druhej strane jeho hráči sú odhodlaní brániť ju za každú cenu, čo môže mať negatívny, ale aj pozitívny efekt. Vzhľadom na  Potenciál/veľkosť publika a stávkovania. Efektívnosť využitia umelej inteligencie a dostupnosť, respektíve využiteľnosť dát z hier.
+Publikum Doti a dosah je v porovnaní s CSGO nižší, na druhej strane jeho hráči sú odhodlaní brániť ju za každú cenu, čo môže mať negatívny, ale aj pozitívny efekt. Vzhľadom na  potenciál/veľkosť publika a stávkovania. Efektívnosť využitia umelej inteligencie a dostupnosť, respektíve využiteľnosť dát z hier.
 \\ \\
 Dáta pri Dote môžeme rozdeliť na dve kategórie : 
 \\ \\
-1. Dáta na predpoveď pred vybratím šampiónov : \\
-Tieto dáta sú obmedzené z dôvodu, že nevieme akých šampiónov budú dané dva tímy hrať. Takže sa spoliehame na predošlé výsledky daných dvoch tímov a ich stretnutí navzájom alebo s podobnými tímami. Takisto, ak sú noví hráči v tíme, vieme sa pozrieť aj na dáta individuálnych hráčov a na ich stretnutia z predošlých tímov. \\
+\begin{enumerate}
+\item Dáta na predpoveď pred vybratím šampiónov - Tieto dáta sú obmedzené z dôvodu, že nevieme akých šampiónov budú dané dva tímy hrať. Takže sa spoliehame na predošlé výsledky daných dvoch tímov a ich stretnutí navzájom alebo s podobnými tímami. Takisto, ak sú noví hráči v tíme, vieme sa pozrieť aj na dáta individuálnych hráčov a na ich stretnutia z predošlých tímov. \\
 Ďalšia podmienka, ktorou by sa dala predikcia vylepšiť, vychádza z porovnaní dát hráčov v danom tíme a šampiónov, ktorí sú práve v turnaji alebo v Patchi najviac hraní. Napríklad práve v rotácii najhranejších Carry šampiónov na profesionálnej scéne je daných 10 a týchto 10 porovnáme s hráčom v Carry pozícii, koľko má za nich nahraných profesionálnych hier alebo na ich SoloQ \footnote {
 	SoloQ - zápasy odohrané na serveroch so všetkými hráčmi, aj neprofesionálnymi
-} účte a ich výhernosť/gold per minute/KDA(Kills, deaths, assists ratio) s týmito šampiónmi.  
+} účte a ich výhernosť/penazí za minútu/KDA(zabitia, smrte, asistencie) s týmito šampiónmi.  
 \\ \\
-2. Dáta na predpoveď po vybratí šampiónov : \\
-Týchto dát je kvantum, lebo vieme použiť dáta o šampiónoch nie len z profesionálnych hier, ale aj z hier normálnych hráčov z vyšších líg v pomere hodnotenia, inak povedaného hodnotiaceho rebríčka. Vedeli by sme použiť dáta aj z nižšie postavených hráčov Doty, ale to by s vysokou pravdepodobnosťou zhoršilo výsledok predikcie vzhľadom na fakt, že hra top 80 percent hráčov a hra top 0.003 percent hráčov sa nedá porovnať. Veľmi dôležité informácie by teda boli o výkonnosti šampiónov ako gold per minute/average KDA alebo winrate. Zároveň by bolo veľmi zaujímavé skombinovať kompatibilnosť šampiónov spolu, spojením dvoch alebo viacerých šampiónov a ich spoločný priemerný winrate.
-
+\item Dáta na predpoveď po vybratí šampiónov - Týchto dát je kvantum, lebo vieme použiť dáta o šampiónoch nie len z profesionálnych hier, ale aj z hier normálnych hráčov z vyšších líg v pomere hodnotenia, inak povedaného hodnotiaceho rebríčka. Vedeli by sme použiť dáta aj z nižšie postavených hráčov Doty, ale to by s vysokou pravdepodobnosťou zhoršilo výsledok predikcie vzhľadom na fakt, že hra top 80 percent hráčov a hra top 0.003 percent hráčov sa nedá porovnať. Veľmi dôležité informácie by teda boli o výkonnosti šampiónov ako peniaze za minútu/zabitia/smrte/výhernosť. Zároveň by bolo veľmi zaujímavé skombinovať kompatibilnosť šampiónov spolu, spojením dvoch alebo viacerých šampiónov a ich spoločný priemerný winrate.
+\end{enumerate}
 
 \subsection{League of Legends}
 League of Legends(Liga Legiend) je najrozšírenejšia MOBA hra na svete s viac ako 3 miliónmi každodenných používateľov a viac ako 100 miliónmi mesačných používateľov primárne z Číny, ako môžeme vidieť na grafe : \ref{leaguegraph} 
@@ -124,21 +129,21 @@ League of Legends(Liga Legiend) je najrozšírenejšia MOBA hra na svete s viac 
 	
 	\includegraphics[width=.9\textwidth]{figures/leaguegraph}
 	\centering
-	\caption{ LoL graf  \label{leaguegraph}}
+	\caption{ Graf znázorňujúci počet hráčov hry LOL  \label{leaguegraph}}
 	
 \end{figure}
 
-Viac informácií nájdeme v článku :\cite{leaguefeed} 
+Viac informácií nájdeme v článku \cite{leaguefeed}. 
 
-Hra je z pohľadu tretej osoby a delí sa na dva tímy po piatich hráčoch. Víťazný tím je ten, ktorý zničí nepriateľskú základňu. Hráči zabíjaním nepriateľských minionov dostávajú peniaze, ktoré môžu využiť na zlepšenie ich výzbroje, čo im dá väčšiu šancu na zabitie nepriateľa a následne nepriateľskej základne.
+Hra je z pohľadu tretej osoby a delí sa na dva tímy po piatich hráčoch. Víťazný tím je ten, ktorý zničí nepriateľskú základňu. Hráči zabíjaním nepriateľských minionov\footnote {
+	minion - NPC (nastavený robot obmedzenej inteligencie vykonávajúci nejakú jednoduchú činnosť), ktoré sa snaží zničiť hocičo nepriateľské, čo je pred ním 
+} dostávajú peniaze, ktoré môžu využiť na zlepšenie ich výzbroje, čo im dá väčšiu šancu na zabitie nepriateľa a následne nepriateľskej základne.
 \\ 
-Riot games má podobne ako Dota verejne dostupné informácie pre developerov na stránke : 
-\\ 
-https://developer.riotgames.com/  
-\\
-a informácie o profesionálnych zápasoch na :
-\\
-https://lol.fandom.com/wiki/League\_Championship\_Series
+Riot games má podobne ako Dota verejne dostupné informácie pre developerov na stránke developerov\footnote {
+	https://developer.riotgames.com/
+}.
+a informácie o profesionálnych zápasoch na \footnote {https://lol.fandom.com/wiki/League\_Championship\_Series
+}.
 
 \subsubsection{Dáta hry League of Legends}
 \begin{itemize}
@@ -157,9 +162,9 @@ https://lol.fandom.com/wiki/League\_Championship\_Series
 
 Publikum z našich 3 hier ma LOL definitívne najväčšie, a to hlavne z dôvodu masívnej popularity v Číne, kde League of Legends má väčšiu popularitu a prestíž ako hocijaké iné, či už športy, hudba, tanec alebo spev. \cite{chinalol} 
 \\
-Aktuálne rozšírenie stávkovania na víťazný tím nie je vzhľadom na veľkosť publika až také rozšírené ako pri Dote a Lolku. To môže ovplyvňovať aj fakt, že gambling je v Číne vysoko ilegálny, až na výnimky ako mesto Macau.\cite{chinagambling}
+Aktuálne rozšírenie stávkovania na víťazný tím nie je vzhľadom na veľkosť publika až také rozšírené ako pri Dote a LOL. To môže ovplyvňovať aj fakt, že gambling je v Číne vysoko ilegálny, až na výnimky ako mesto Macau.\cite{chinagambling}
 \\
-Využitie  umelej inteligencie v Lolku je veľké vzhľadom na verejne dostupné dáta a hlavne vysokú využiteľnosť.
+Využitie  umelej inteligencie v hre LOL je veľké vzhľadom na verejne dostupné dáta a hlavne vysokú využiteľnosť.
 \\
 Dáta sú primárne veľmi podobné Dote, kde ich rozdeľujeme na dve časti, pred a po vybratí šampiónov.
 \\
