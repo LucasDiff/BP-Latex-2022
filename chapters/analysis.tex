@@ -8,7 +8,7 @@ Analýza sa bude zaoberať dátami využiteľnými pri implementácii umelej int
 Bližšie si pozrieme kandidátov hier na základe možností dát, produktivity, veľkosti ich publika a investovaných fondov do tipovania.
 
 \subsection{Counter-Strike: Global Offensive}
-Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná v roku 2012.\cite{csgoplayers} V roku 2021 prebiehal svetový šampionát vo Švédsku s výherným rozpočtom 2 miliónov dolárov. Veľkou časťou tejto hry je verejne dostupný trh s predmetmi dostupnými iba cez túto hru. Tieto predmety majú na podobnom základe ako NFT\footnote {
+Hra s priemerným publikom viac ako 500 000 hráčov každý deň, publikovaná v roku 2012.\footnote{analýza hráčov CSGO - https://steamcharts.com/app/730} V roku 2021 prebiehal svetový šampionát vo Švédsku s výherným rozpočtom 2 miliónov dolárov. Veľkou časťou tejto hry je verejne dostupný trh s predmetmi dostupnými iba cez túto hru. Tieto predmety majú na podobnom základe ako NFT\footnote {
 	NFT - non fungible token, digitálne potvrdenie vlastníctva predmetu/umenia/hudby/momentu na blockchain báze} peňažnú hodnotu a poskytujú hráčom vsadiť cez tretie strany na výhercov konkrétnych zápasov, čo viacnásobne zväčšuje tipovací trh. Problémom pri FPS hrách je ale určenie potrebných dát na predpoveď. Výsledok má príliš veľa variácií, kde len milimetre rozhodujú o úplnej zmene priebehu. Dalo by sa určiť víťaza na základe predošlých stretnutí daných dvoch tímov, no tímy sú veľmi ovplyvnené zmenami hráčov, ktoré môžu úplne zmeniť tímovú atmosféru a dáta z predošlých hier sú irelevantné.
 
  \subsubsection{Predpovede počas zápasu}
@@ -26,7 +26,7 @@ Na obrázku \ref{csgograf} si pri začiatku môžeme všimnúť 51 percentnú pr
 
  
 
-\subsubsection{Potrebné dáta hry Counter-Strike: Global Offensive :}
+\subsubsection{Využiteľné dáta hry Counter-Strike: Global Offensive :}
 
  \begin{itemize}
  	\item PlayerId - unikátne ID hráča
@@ -60,7 +60,7 @@ Na obrázku \ref{csgograf} si pri začiatku môžeme všimnúť 51 percentnú pr
 \subsection{Dota 2}
 Dota je jednou z dvoch najznámejších MOBA \footnote {
 	MOBA - tip online hier s viacerými hráčmi, ktorí majú súboje v aréne
-} hier na svete, s priemerným počtom hráčov viac ako 400 tisíc. \cite{dotaplayers} Podobne ako Counter-Strike má predmety a verejný trh. Na druhej strane výherný rozpočet sa s ním nedá porovnať, pretože v roku 2021 prekonal 40 miliónov, čo je jeden z najväčších zo všetkých hier na svete. \cite{dotaprizepool}
+} hier na svete, s priemerným počtom hráčov viac ako 400 tisíc. \footnote{analýza hráčov Dota2 - https://steamcharts.com/app/570} Podobne ako Counter-Strike má predmety a verejný trh. Na druhej strane výherný rozpočet sa s ním nedá porovnať, pretože v roku 2021 prekonal 40 miliónov, čo je jeden z najväčších zo všetkých hier na svete. \footnote{prehľad všetkých turnajov a priceppolov - https://dota2.prizetrac.kr/}
 \\ \\
 Dota má nástroj na vyhľadávanie hier. Na obrázku \ref{dota1} si vieme vybrať šampiónov \footnote {
 	šampión - postava, ktorú hráč reprezentuje v hre
@@ -83,24 +83,19 @@ Po rozkliknutí zápasu si v zázname vieme pozrieť výhercu a všetky informá
 	
 \end{figure}
 
-\subsubsection{Dáta hry Dota 2}
+\subsubsection{Využiteľné dáta hry Dota 2}
 
  \begin{itemize}
 \item match\_id - unikátne ID zápasu 
 \item duration - dĺžka zápasu 
-\item start\_time - začiatok zápasu 
 \item radiant\_team\_id - ID radiant tímu 
 \item radiant\_name - meno radiant tímu 
 \item dire\_team\_id - ID dire tímu 
 \item dire\_name - meno dire tímu 
 \item leagueid - ID ligy
-\item league\_name - meno ligy
-\item series\_id - ID série
-\item series\_type - typ série
 \item radiant\_score - skóre radiant
-\item dire\_score - skóre direy
+\item dire\_score - skóre dire
 \item radiant\_win - výherca
-\item name - meno hráča
 \item radiant\_picks - radiant vybraní šampióni
 \item radiant\_bans - radiant zabanovaní šampióni
 \item dire\_picks - dire vybraní šampióni
@@ -114,12 +109,14 @@ Publikum Doti a dosah je v porovnaní s CSGO nižší, na druhej strane jeho hr�
 Dáta pri Dote môžeme rozdeliť na dve kategórie : 
 \\ \\
 \begin{enumerate}
-\item Dáta na predpoveď pred vybratím šampiónov - Tieto dáta sú obmedzené z dôvodu, že nevieme akých šampiónov budú dané dva tímy hrať. Takže sa spoliehame na predošlé výsledky daných dvoch tímov a ich stretnutí navzájom alebo s podobnými tímami. Takisto, ak sú noví hráči v tíme, vieme sa pozrieť aj na dáta individuálnych hráčov a na ich stretnutia z predošlých tímov. \\
-Ďalšia podmienka, ktorou by sa dala predikcia vylepšiť, vychádza z porovnaní dát hráčov v danom tíme a šampiónov, ktorí sú práve v turnaji alebo v Patchi najviac hraní. Napríklad práve v rotácii najhranejších Carry šampiónov na profesionálnej scéne je daných 10 a týchto 10 porovnáme s hráčom v Carry pozícii, koľko má za nich nahraných profesionálnych hier alebo na ich SoloQ \footnote {
+\item Dáta na predpoveď pred vybratím šampiónov - tieto dáta sú obmedzené z dôvodu, že nevieme, akých šampiónov budú dané dva tímy hrať. Takže sa spoliehame na predošlé výsledky daných dvoch tímov a ich stretnutí navzájom alebo s podobnými tímami. Takisto, ak sú noví hráči v tíme, vieme sa pozrieť aj na dáta individuálnych hráčov a na ich stretnutia z predošlých tímov. \\
+Ďalšia podmienka, ktorou by sa dala predikcia vylepšiť, vychádza z porovnaní dát hráčov v danom tíme a šampiónov, ktorí sú práve v turnaji alebo sú v Patchi\footnote {
+	Patch-aktuálna forma hry
+} najviac hraní. Napríklad práve v rotácii najhranejších Carry šampiónov na profesionálnej scéne je daných 10 a týchto 10 porovnáme s hráčom v Carry pozícii, koľko má za nich nahraných profesionálnych hier alebo na ich SoloQ \footnote {
 	SoloQ - zápasy odohrané na serveroch so všetkými hráčmi, aj neprofesionálnymi
 } účte a ich výhernosť/penazí za minútu/KDA(zabitia, smrte, asistencie) s týmito šampiónmi.  
 \\ \\
-\item Dáta na predpoveď po vybratí šampiónov - Týchto dát je kvantum, lebo vieme použiť dáta o šampiónoch nie len z profesionálnych hier, ale aj z hier normálnych hráčov z vyšších líg v pomere hodnotenia, inak povedaného hodnotiaceho rebríčka. Vedeli by sme použiť dáta aj z nižšie postavených hráčov Doty, ale to by s vysokou pravdepodobnosťou zhoršilo výsledok predikcie vzhľadom na fakt, že hra top 80 percent hráčov a hra top 0.003 percent hráčov sa nedá porovnať. Veľmi dôležité informácie by teda boli o výkonnosti šampiónov ako peniaze za minútu/zabitia/smrte/výhernosť. Zároveň by bolo veľmi zaujímavé skombinovať kompatibilnosť šampiónov spolu, spojením dvoch alebo viacerých šampiónov a ich spoločný priemerný winrate.
+\item Dáta na predpoveď po vybratí šampiónov - týchto dát je kvantum, lebo vieme použiť dáta o šampiónoch nie len z profesionálnych hier, ale aj z hier normálnych hráčov z vyšších líg v pomere hodnotenia, inak povedaného hodnotiaceho rebríčka. Vedeli by sme použiť dáta aj z nižšie postavených hráčov Doty, ale to by s vysokou pravdepodobnosťou zhoršilo výsledok predikcie vzhľadom na fakt, že hra top 80 percent hráčov a hra top 0.003 percent hráčov sa nedá porovnať. Veľmi dôležité informácie by teda boli o výkonnosti šampiónov ako peniaze za minútu/zabitia/smrte/výhernosť. Zároveň by bolo veľmi zaujímavé skombinovať kompatibilnosť šampiónov spolu, spojením dvoch alebo viacerých šampiónov a ich spoločný priemerný winrate.
 \end{enumerate}
 
 \subsection{League of Legends}
@@ -145,7 +142,7 @@ Riot games má podobne ako Dota verejne dostupné informácie pre developerov na
 a informácie o profesionálnych zápasoch na \footnote {https://lol.fandom.com/wiki/League\_Championship\_Series
 }.
 
-\subsubsection{Dáta hry League of Legends}
+\subsubsection{Použiteľné dáta hry League of Legends}
 \begin{itemize}
 \item date - dátum zápasu 
 \item blueteam - meno modrého tímu 
@@ -176,7 +173,33 @@ Veľmi lukratívne dáta, ktoré sú nanešťastie zatajené pred verejnosťou, 
 Časť analýzy dostupných spracovaní dát sa bude venovať jednotlivým druhom umelej inteligencie.
 
 \subsection{Supervised learning}
-Podkategória umelej inteligencie, ktorá používa daný dataset na natrénovanie modelu.
+Podkategória umelej inteligencie, ktorá používa dopredu označené dáta.  Používa tipy algoritmov\cite{umelainteligencia}
+ \begin{itemize}
+	\item Lineárna regresia - modeluje lineárny vzťah medzi atribútom a cieľovou premennou. Jej výstupom je tzv. spojitý výstup.\cite{regresia}
+	\item SVM - algoritmus pomocných vektorových strojov alebo čiar. Je to rozšírenie perceptronu, jeho cieľ je maximalizovať hraničné pásmo \cite{svm}
+	\item KNN - algoritmus k najbližších susedov je tzv. lenivý prístup, ktorý pri klasifikovaných dátach určuje triedu testovanej skupiny podľa toho, aký typ dát je najbližšie pri danej inštancii\cite{knn}
+\end{itemize}
+
+\subsection{Unsupervised learning}
+Podkategória umelej inteligencie, ktorej dáta nie su dopredu klasifikované. 
+\subsubsection{Používa metódy}
+ \begin{itemize}
+	\item Klastrovanie - pokúša sa nájsť skupiny podobných objektov, ktoré sú si podobné viac, ako objekty v iných skupinách\cite{clustering}
+	\item Redukcia dimenzionality - je to proces, pri ktorom sa snažíme odstrániť počet nepotrebných premenných \cite{dimenzionalita}
+\end{itemize}
 
 \subsection{Reinforcement learning}
-Časť umelej inteligencie, pri ktorej sa sledujú kroky inteligentných agentov na maximalizáciu efektívnosti dosiahnutia cieľa.
+Časť umelej inteligencie, pri ktorej sa sledujú kroky inteligentných agentov na maximalizáciu efektívnosti dosiahnutia cieľa. Agenti sú zaradení do prostredia s limitovanými informáciami o danom prostredí, zároveň je im poskytnutá spätná väzba na kvalitu ich vykonaných krokov. \cite{reinforcement}
+\subsubsection{Druhy agentov}
+\begin{itemize}
+	\item Reflexný agent - jeho nasledujúcu akciu zakladá na jeho aktuálnom poznaní sveta. Nehľadí na dôsledky jeho akcií.
+	\item Cieľový agent - snaží sa dopredu naplánovať jeho potreby na dosiahnutie cieľa 
+	\item Úžitkový agent 
+\end{itemize}
+\subsubsection{Vyhľadávacie algoritmy}
+\begin{itemize}
+	\item Brute force - používanie hrubej sily k dosiahnutiu požadovaného výsledku. To zahŕňa prechádzaním všetkých možností, až pokiaľ náhodou nedostaneme scenár, ktorý chceme.\cite{bruteforce}
+	\item Backtracking - Algoritmus spätného vyhľadávania je algoritmom využívajúcim techniku CSP (Constraint satisfaction problem). Napríklad pri riešení problému N-Queens\footnote{N-Queens - problém, kde úlohou je rozložiť 8 dám na šachovnici bez toho, aby na seba navzájom útočili} tento algoritmus vyhľadá prázdne políčko v riadku šachovnice a hneď skontroluje, či daný stav porušuje pravidlá problému. Ak nájde políčko, kde stav neporušuje pravidlá problému, položí naň dámu a stav expanduje. Pri vyčerpaní dostupných políčok pre nasledujúce políčko sa algoritmus vráti na predchádzajúce políčko a daný stav zahodí.\cite{backtracking}
+	\item Forwardcheck - Algoritmus doprednej kontroly je rozšírením algoritmu spätného vyhľadávania. Pri riešení problému N-Queens tento algoritmus využíva okrem spätného vyhľadávania aj doprednú kontrolu, kde po expandovaní stavu skontroluje, či sú aj ďalšie políčka v nasledujúcich riadkoch expandovateľné s pravidlami problému. Pri zlom riešení sa využije spätné vyhľadávanie. \cite{forwardcheck}
+	\item Min-max konflikt - Algoritmus minimálnych konfliktov je algoritmom využívajúci techniku CSP (Constraint satisfaction problem). Pri riešení problému N-Queens tento algoritmus začína so stavom, kde všetky riadky obsahujú dámy, ale stále sa nejaké ohrozujú, vyberie si náhodnú dámu s konfliktami a skontroluje políčka v riadku, kde daná dáma sa nachádza. Ak nájde políčko s menším počtom konfliktov ako políčko, kde sa práve nachádza dáma, tak dámu na dané políčko presunie. Algoritmus končí úspešne po nájdení správneho stavu alebo neúspešne po určenom počte krokov.\cite{minmax}
+\end{itemize}
