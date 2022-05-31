@@ -1,33 +1,23 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Karel Language Reference}
+\chapter{Systémová príručka}
+Táto časť slúži na opis priečinkov a rozdelenia kódu.
+\section*{Rozdelenie kódu}
+Funkčný kód je rozdelený na dve časti. Prvá časť sa venuje základnej úprave dát do čitateľnej formy, konkrétne vo funkcii main napísanej v kóde java. Druhá časť, ktorá klasifikuje všetky dáta, spracováva výsledky a vypočítava skóre, je napísaná v Pythone, konkrétne v main funkcii predict.py. 
+\section*{Opis kódu}
+Prvá časť v kóde main.java má dve funkcie. Je to funkcia GetCharFromString, ktorá vracia aktuálny charakter v stringu a funkcia main, v ktorej otvoríme ako BufferedReader textový súbor 'menochampiona'+1.txt a zároveň vytvoríme nový textový súbor 'menochampiona'+.txt. Následne prechádzame celý textový súbor a upravujeme ho do čitateľnej podoby.
+\\ Druhá čast v kóde predict.py má dve hlavné priority. Prvá je zápis všetkých získaných textových súborov z programu javy do jedného dataframu a zároveň ich klasifikácia. A druhá pracuje s daným dataframom a počíta skóre.
+\section*{Opis priečinkov}
+V priečinku transformdata sa nachádza 332 súborov, z čoho je viac než 320 textových súborov s dátami o každom jednom šampiónovi. Zároveň je tam aj hlavná časť kódu a to súbor predict.py, ktorý má v sebe spracovanie a úpravu všetkých dát. Hlavný súbor s dátami sa volá winratedata.txt ktorý v sebe drží hodnoty všetkých klasifikovaných dát pre každého šampióna. Takisto v hlavnom priečinku môžete nájsť vysledky.xlsx, čo je excelovská tabuľka všetkých otestovaných zápasov. V priečinku src nájdeme kód main.java, pomocou ktorého sme dáta dostali do čitateľnej podoby pre náš python kód. 
 
-\section*{Karel's Primitives}
+\chapter{Používateľská príručka}
+V tejto časti si ukážeme ako spustiť a obsluhovať aktuálny kód.
 
-\begin{itemize}
-    \item \verb|void movek()| - Moves \textit{Karel} one intersection forward.
-    \item \verb|void turn_left()| - Pivots \textit{Karel} $90$ degrees left.
-    \item \verb|void pick_beeper()| - Takes a beeper from the current intersection and puts it in the beeper bag.
-    \item \verb|void put_beeper()| - Takes a beeper from the beeper bag and puts it at the current intersection.
-    \item \verb|void turn_on(char* path)| - Turns \textit{Karel} on.
-    \item \verb|void turn_off()| - Turns \textit{Karel} off.
-\end{itemize}
+\section*{Potrebné súbory}
+Na úspešné odskúšanie kódu na predikciu potrebujete mať textové súbory winratedata.txt, winlose.txt, teams.txt a zároveň samotný súbor s kódom predict.py, ktorý sa nachádza v hlavnom priečinku spolu s textovými súbormi.
 
+\section*{Príprava prostredia a knižníc} 
+Odporúčané prostredie je Spyder, ideálne verzia 5.0.5 a novšie. Prostredie Spyder je možné stiahnuť na ich domácej stránke zadarmo. Potrebná knižnica na stiahnutie je pandas, čo môžete vykonať príkazom - pip install pandas, napísaným v konzole.
 
-\section*{Karel's Sensors}
-
-\begin{itemize}
-    \item \verb|int front_is_clear()| - Returns \texttt{1} if there is no wall directly in front of \textit{Karel}. \texttt{0} if there is.
-    \item \verb|int right_is_clear()| - Returns \texttt{1} if there is no wall immediately to \textit{Karel}'s right. \texttt{0} if there is.
-    \item \verb|int beepers_present()| - Returns \texttt{1} if \textit{Karel} is standing at an intersection that has a beeper. \texttt{0} otherwise.
-    \item \verb|int facing_north()| - Returns \texttt{1} if \textit{Karel} is facing north. \texttt{0} otherwise.
-    \item \verb|int beepers_in_bag()| - Returns \texttt{1} if there is at least one beeper in \textit{Karel}'s beeper bag. \texttt{0} if the beeper bag is empty.
-\end{itemize}
-
-
-\section*{Misc Functions}
-
-\begin{itemize}
-    \item \verb|void set_step_delay(int)| - Sets delay of one \textit{Karel}'s step in miliseconds.
-    \item \verb|loop(int)| - Repeats \textit{Karel}'s instruction in a loop.
-\end{itemize}
+\section*{Popis používania}
+Kód predict.py je potrebné otvoriť v predpripravenom prostredí. Následne na vrchu kódu je 5 premenných top, jg, mid, bot a sup. Pri predikcii kompozície, ktorú chcete odskúšať do týchto premenných, vložte mená šampiónov bez medzier v ich mene s malými písmenami. Ak ste tak vykonali, spustite kód zelenou šípkou a v konzole by mali byť vypísané premenné totalgames, totalscore a známka, čo označuje aktuálnu kompozíciu, ktorú ste zapísali. 
